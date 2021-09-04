@@ -10,7 +10,9 @@
     "build:dev": "webpack",
     "build:prod": "webpack --mode production --env production",
     "dev-server": "webpack serve",
-    "test": "jest --config=jest.config.json"
+    "test": "jest --config=jest.config.json",
+    "start": "node server/server.js",
+    "heroku-postbuild": "yarn run build:prod"
   },
   "dependencies": {
     "-": "^0.0.1",
@@ -30,6 +32,7 @@
     "enzyme": "3.0.0",
     "enzyme-adapter-react-16": "1.0.0",
     "enzyme-to-json": "3.0.1",
+    "express": "4.15.4",
     "init": "^0.1.2",
     "jest": "^27.0.6",
     "live-server": "^1.2.1",
