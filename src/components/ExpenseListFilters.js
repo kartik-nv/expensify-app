@@ -23,6 +23,7 @@ class ExpenseListFilters extends React.Component {
         <input
           type="text"
           value={this.props.filters.text}
+          placeholder='Search for expenses'
           onChange={(e) => {
             this.props.dispatch(setTextFilter(e.target.value));
           }}
