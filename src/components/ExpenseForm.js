@@ -9,7 +9,7 @@ export default class ExpenseForm extends React.Component {
     this.state = {
       description: props.expense ? props.expense.description : '',
       note: props.expense ? props.expense.note : '',
-      amount: props.expense ? (props.expense.amount / 100).toString() : '',
+      amount: props.expense ? (props.expense.amount).toString() : '',
       createdAt: props.expense ? moment(props.expense.createdAt) : moment(),
       calendarFocused: false,
       error: ''
@@ -55,10 +55,10 @@ export default class ExpenseForm extends React.Component {
   };
   render() {
     return (
-      <div>
-        {this.state.error && <p>{this.state.error}</p>}
-        <form onSubmit={this.onSubmit}>
+        <form className="form" onSubmit={this.onSubmit}>
+          {this.state.error && <p className="form__error">{this.state.error}</p>}
           <input
+            className="text-input"
             type="text"
             placeholder="Description"
             autoFocus
@@ -68,6 +68,7 @@ export default class ExpenseForm extends React.Component {
           <input
             type="text"
             placeholder="Amount"
+            className="text-input"
             value={this.state.amount}
             onChange={this.onAmountChange}
           />
@@ -81,13 +82,15 @@ export default class ExpenseForm extends React.Component {
           />
           <textarea
             placeholder="Add a note for your expense (optional)"
+            className="textarea"
             value={this.state.note}
             onChange={this.onNoteChange}
           >
           </textarea>
-          <button>Add Expense</button>
+            <div>
+              <button className="button">Save Expense</button>
+            </div>
         </form>
-      </div>
     )
   }
 }
