@@ -24,7 +24,13 @@
       "src": "/images/favicon192x192.png",
       "type": "image/png",
       "sizes": "192x192"
+    },
+    {
+      "src": "/images/favicon512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
-  "start_url": "/"
+  "start_url": "https://knv-expensify.herokuapp.com/",
+  "prefer_related_applications": false
 }
